@@ -11890,20 +11890,20 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Minimum price of the data</span>
-<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Maximum price of the data</span>
-<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Mean price of the data</span>
-<span class="n">mean_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">mean_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Median price of the data</span>
-<span class="n">median_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="n">median_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Standard deviation of prices of the data</span>
 <span class="n">std_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
@@ -14126,6 +14126,112 @@ Predicted selling price for Client 3&#39;s home: $927,500.00
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">features</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[10]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>RM</th>
+      <th>LSTAT</th>
+      <th>PTRATIO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>489.000000</td>
+      <td>489.000000</td>
+      <td>489.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>6.240288</td>
+      <td>12.939632</td>
+      <td>18.516564</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.643650</td>
+      <td>7.081990</td>
+      <td>2.111268</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>3.561000</td>
+      <td>1.980000</td>
+      <td>12.600000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>5.880000</td>
+      <td>7.370000</td>
+      <td>17.400000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>6.185000</td>
+      <td>11.690000</td>
+      <td>19.100000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>6.575000</td>
+      <td>17.120000</td>
+      <td>20.200000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>8.398000</td>
+      <td>37.970000</td>
+      <td>22.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -14133,7 +14239,7 @@ Predicted selling price for Client 3&#39;s home: $927,500.00
 <p><strong>Answer: </strong></p>
 <ul>
 <li>The prices that I would recommend for each client will be pretty much what the optimized model has predicted, which is ~ \$420k, \$287k and \$927k for client 1, 2 and 3 respectively.</li>
-<li>The predictions does seem reasonable taking into account both the relative pricing amongst the houses and the statistics calculated in the Data Exploration section. The minimum, mean, medium and maximum house prices are \$105k, \$454k, \$438k and \$1,024k respectively. Also, since client 3 house has the best facilities, and client 2 house the worst, the predictions of \$927k for client 3, \$287k for client 2 and \$420k for clinet 1 make sense.</li>
+<li>The predictions does seem reasonable taking into account both the relative pricing amongst the houses and the statistics calculated in the Data Exploration section. The minimum, mean, medium and maximum house prices are \$105k, \$454k, \$438k and \$1,024k respectively. Note that the mean values for the number of rooms, LSTAT and PTRATIO are 6.2, 12.9 and 18.5 respectively. Thus, client 3 house has the best facilities (better than average in all three features), and client 2 house the worst (worse than average in all three features), the predictions of \$927k for client 3, \$287k for client 2 and \$420k for client 1 (who has two features below and one feature above the corresponding average values) make sense.</li>
 </ul>
 
 </div>
@@ -14215,12 +14321,13 @@ Range in prices: $69,044.61
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
+<p>The constructed model <strong>should not</strong> be used for the following reasons:</p>
 <ul>
 <li>The model is constructed with the data that was collected from 1978, and although prices are modified taking into consideration the inflation factor, the other variables that influence the neighbourhood might have changed drastically. For example, the student to teacher ratio, percentage of low income owners might have starkly changed. </li>
 <li>The features present in the data is also not sufficient enough to accurately predict the house prices. For example, presence of swimming pool, presence of corporate companies around the house, crime rate in the area might influence the price of the house. Eventhough it may not be possible to capture in all the external factors, just predicting the house price on three features doesn't seem sensible.</li>
 <li>Of course, the model built will only make sense when applied to predicting the prices of the same area from which the data is gathered. That not only means that the data collected from Boston will not be applicable to a rural city, it might not even be applicable to an urban like city, say, in India.</li>
 <li>It might not also be fair to judge the price of an individual home based on the characteristic of the entire neighbourhoold. For example, a bachelor in indifferent to the student-to-teacher ratio around the neighbourhood. Also, this depends on how we are defining a neighbourhood. </li>
-<li>Additionally, the range of prices predicted above for a particular client varies a lot. The range is about 20% the mean predicted price. Combining all these factors, the constructed model should not be used in a real-world setting.</li>
+<li>Additionally, the range of prices predicted above for a particular client varies a lot. The range is about 20% the mean predicted price. Combining all these factors, the constructed model <strong>should not</strong> be used in a real-world setting.</li>
 </ul>
 
 </div>
